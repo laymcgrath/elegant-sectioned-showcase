@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSelector from './LanguageSelector';
 import ChatInterface from './ChatInterface';
 
@@ -9,6 +10,7 @@ export type Language = 'pt' | 'en';
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
+  const { t } = useLanguage();
 
   const handleLanguageSelect = (language: Language) => {
     setSelectedLanguage(language);
@@ -36,7 +38,7 @@ const Chatbot = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b">
               <h3 className="font-bold text-lg text-slate-900">
-                {selectedLanguage === 'pt' ? 'Assistente Virtual' : 'Virtual Assistant'}
+                {t('chatbot.title')}
               </h3>
               <button
                 onClick={handleClose}
