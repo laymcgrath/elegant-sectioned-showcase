@@ -1,27 +1,30 @@
 
 import { Code, Palette, Rocket, Users } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About = () => {
+  const { t } = useLanguage();
+  
   const skills = [
     {
       icon: Code,
-      title: 'Desenvolvimento',
-      description: 'Especialista em React, TypeScript, Node.js e tecnologias modernas de desenvolvimento web.',
+      title: t('about.development'),
+      description: t('about.developmentDesc'),
     },
     {
       icon: Palette,
-      title: 'Design UI/UX',
-      description: 'Criação de interfaces intuitivas e experiências de usuário memoráveis.',
+      title: t('about.design'),
+      description: t('about.designDesc'),
     },
     {
       icon: Rocket,
-      title: 'Performance',
-      description: 'Otimização de aplicações para máxima performance e experiência do usuário.',
+      title: t('about.performance'),
+      description: t('about.performanceDesc'),
     },
     {
       icon: Users,
-      title: 'Colaboração',
-      description: 'Trabalho em equipe eficiente e comunicação clara com stakeholders.',
+      title: t('about.collaboration'),
+      description: t('about.collaborationDesc'),
     },
   ];
 
@@ -31,26 +34,22 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="animate-slide-in-left">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Sobre Mim
+              {t('about.title')}
             </h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Sou um desenvolvedor full stack com mais de 5 anos de experiência em criar 
-              soluções digitais inovadoras. Minha paixão é transformar ideias em realidade 
-              através de código limpo e design elegante.
+              {t('about.description1')}
             </p>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Especializo-me em React, TypeScript, Node.js e design UI/UX. Acredito que a 
-              melhor tecnologia é aquela que se torna invisível ao usuário, proporcionando 
-              experiências fluidas e intuitivas.
+              {t('about.description2')}
             </p>
             
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <h3 className="font-bold text-slate-900 mb-2">Projetos Concluídos</h3>
+                <h3 className="font-bold text-slate-900 mb-2">{t('about.projectsCompleted')}</h3>
                 <p className="text-3xl font-bold text-slate-700">50+</p>
               </div>
               <div>
-                <h3 className="font-bold text-slate-900 mb-2">Anos de Experiência</h3>
+                <h3 className="font-bold text-slate-900 mb-2">{t('about.yearsExperience')}</h3>
                 <p className="text-3xl font-bold text-slate-700">5+</p>
               </div>
             </div>

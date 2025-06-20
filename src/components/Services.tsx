@@ -1,42 +1,45 @@
 
 import { Globe, Smartphone, Database, Zap, Shield, Settings } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: Globe,
-      title: 'Desenvolvimento Web',
-      description: 'Criação de sites e aplicações web modernas, responsivas e otimizadas para performance.',
+      title: t('services.webDev'),
+      description: t('services.webDevDesc'),
       features: ['React & TypeScript', 'Next.js', 'Tailwind CSS', 'APIs RESTful'],
     },
     {
       icon: Smartphone,
-      title: 'Aplicações Mobile',
-      description: 'Desenvolvimento de aplicativos móveis nativos e híbridos para iOS e Android.',
+      title: t('services.mobileApps'),
+      description: t('services.mobileAppsDesc'),
       features: ['React Native', 'Flutter', 'UI/UX Mobile', 'App Store Deploy'],
     },
     {
       icon: Database,
-      title: 'Backend & APIs',
-      description: 'Desenvolvimento de APIs robustas e sistemas backend escaláveis.',
+      title: t('services.backend'),
+      description: t('services.backendDesc'),
       features: ['Node.js', 'Express', 'MongoDB', 'PostgreSQL'],
     },
     {
       icon: Zap,
-      title: 'Otimização',
-      description: 'Melhoria de performance e otimização de aplicações existentes.',
+      title: t('services.optimization'),
+      description: t('services.optimizationDesc'),
       features: ['Performance Audit', 'SEO', 'Core Web Vitals', 'Bundle Optimization'],
     },
     {
       icon: Shield,
-      title: 'Segurança',
-      description: 'Implementação de medidas de segurança e boas práticas.',
+      title: t('services.security'),
+      description: t('services.securityDesc'),
       features: ['Authentication', 'Authorization', 'HTTPS', 'Data Protection'],
     },
     {
       icon: Settings,
-      title: 'Consultoria',
-      description: 'Consultoria técnica e arquitetural para projetos complexos.',
+      title: t('services.consulting'),
+      description: t('services.consultingDesc'),
       features: ['Architecture Review', 'Code Review', 'Best Practices', 'Team Training'],
     },
   ];
@@ -46,11 +49,10 @@ const Services = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Meus Serviços
+            {t('services.title')}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Ofereço soluções completas em desenvolvimento e design, 
-            desde a concepção até a implementação final.
+            {t('services.description')}
           </p>
         </div>
 

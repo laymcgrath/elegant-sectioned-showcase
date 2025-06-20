@@ -1,7 +1,10 @@
 
 import { ExternalLink, Github } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Portfolio = () => {
+  const { t } = useLanguage();
+  
   const projects = [
     {
       title: 'E-commerce Platform',
@@ -64,11 +67,10 @@ const Portfolio = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Meu Portfólio
+            {t('portfolio.title')}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Uma seleção dos meus projetos mais recentes e impactantes, 
-            demonstrando minhas habilidades e criatividade.
+            {t('portfolio.description')}
           </p>
         </div>
 
